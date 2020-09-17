@@ -59,6 +59,3 @@ Toutes les urls du server-side ont besoin dune clé api (AUTH_TOKEN) sinon cela 
 
 
 Merci d'avoir pris le temps de regarder ceci.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
