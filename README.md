@@ -34,7 +34,7 @@ $ openssl pkey -in config/jwt/private.pem -out config/jwt/public.pem -pubout
 Timestampable (created, updated) sur les Entity
 UserManager - (Pour la gestion des utilisateurs (created, updated, ..))
 Système de logs - (par fichier ou en bdd pour la traçabilité)
-Ajout de vérification sur les données envoyer et meilleurs gestions des erreurs
+Ajout de vérification sur les données envoyer et meilleure gestion des erreurs
 ```
 
 ## Doc API
@@ -58,7 +58,7 @@ Toutes les urls du server-side ont besoin dune clé api (AUTH_TOKEN) sinon cela 
 ```
 
 
-Merci d'avoir prit le temps de regarder ceci.
+Merci d'avoir pris le temps de regarder ceci.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
