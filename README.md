@@ -18,6 +18,11 @@ composer install
 php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --force
 php bin/console app:create-fake-data
+php bin/phpunit src/tests/Controller/
+
+Compte utilisateur :
+email: admin@admin.com
+password: password
 ```
 
 ## Generate the SSH keys (JWT):
