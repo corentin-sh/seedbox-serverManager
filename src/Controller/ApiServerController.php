@@ -22,7 +22,7 @@ class ApiServerController extends AbstractController
     public function serversList(
         Request $request,
         SerializerService $serializerService
-    ):JsonResponse
+    ): JsonResponse
     {
         $servers = $this->getDoctrine()->getRepository(Server::class)->findAll();
 
@@ -39,7 +39,7 @@ class ApiServerController extends AbstractController
         Server $server,
         Request $request,
         SerializerService $serializerService
-    ):JsonResponse {
+    ): JsonResponse {
         $server = $serializerService->serialize($server);
         $response = JsonResponse::fromJsonString($server);
 
@@ -49,7 +49,7 @@ class ApiServerController extends AbstractController
     /**
      * @Route("/servers", name="create_server", methods={"POST"})
      */
-    public function createServer(Request $request):JsonResponse
+    public function createServer(Request $request): JsonResponse
     {
         if (empty($request->request->get('name')) ||
             empty($request->request->get('active')) ||
@@ -85,7 +85,7 @@ class ApiServerController extends AbstractController
         Server $server,
         Request $request,
         SerializerService $serializerService
-    ):JsonResponse {
+    ): JsonResponse {
         try {
             $server->setName($request->request->get('name'));
             $server->setActive($request->request->get('active'));
@@ -107,7 +107,7 @@ class ApiServerController extends AbstractController
     /**
      * @Route("/servers/{id}", name="delete_server", methods={"DELETE"})
      */
-    public function deleteServer(Server $server, Request $request):JsonResponse
+    public function deleteServer(Server $server, Request $request): JsonResponse
     {
         try {
             $entityManager = $this->getDoctrine()->getManager();
