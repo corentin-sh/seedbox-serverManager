@@ -51,20 +51,20 @@ class ApiServerController extends AbstractController
      */
     public function createServer(Request $request): JsonResponse
     {
-        if (empty($request->request->get('name')) ||
-            empty($request->request->get('active')) ||
-            empty($request->request->get('customData'))
-        ) {
-            $response = new JsonResponse(['success' => false], 400);
+        if (empty($request->get('name')) || empty($request->get('active')))
+        {
+            $response = new JsonResponse([
+                'success' => false
+            ], 400);
 
             return $response;
         }
 
         try {
             $server = new Server();
-            $server->setName($request->request->get('name'));
-            $server->setActive($request->request->get('active'));
-            $server->setCustomData($request->request->get('customData'));
+            $server->setName($request->get('name'));
+            $server->setActive($request->get('active'));
+            $server->setCustomData($request->get('customData'));
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($server);
@@ -87,9 +87,9 @@ class ApiServerController extends AbstractController
         SerializerService $serializerService
     ): JsonResponse {
         try {
-            $server->setName($request->request->get('name'));
-            $server->setActive($request->request->get('active'));
-            $server->setCustomData($request->request->get('customData'));
+            $server->setName($request->get('name'));
+            $server->setActive($request->get('active'));
+            $server->setCustomData($request->get('customData'));
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($server);

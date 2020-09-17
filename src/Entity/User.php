@@ -86,14 +86,14 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getApiKey(): string
+    public function getApiToken(): string
     {
-        return (string) $this->apiKey;
+        return (string) $this->apiToken;
     }
 
-    public function setApiKey(string $apiKey): self
+    public function setApiToken(string $apiToken): self
     {
-        $this->apiKey = $apiKey;
+        $this->apiToken = $apiToken;
 
         return $this;
     }

@@ -28,7 +28,7 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
      */
     public function supports(Request $request)
     {
-        return $request->headers->has('Authorization');
+        return $request->headers->has('AUTH-TOKEN');
     }
 
     /**
@@ -37,7 +37,7 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
      */
     public function getCredentials(Request $request)
     {
-        return $request->headers->get('Authorization');
+        return $request->headers->get('AUTH-TOKEN');
     }
 
     public function getUser($credentials, UserProviderInterface $userProvider)
